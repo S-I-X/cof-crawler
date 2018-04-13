@@ -1,11 +1,11 @@
 # coding:utf-8
 # 要使返回值为中文，需要设置请求头信息
-import requests
 import json
-import Consts
-import pymongo
 import time
 
+import Consts
+import pymongo
+import requests
 
 headers = Consts.headers
 myKey = Consts.AmapSearchKey
@@ -32,7 +32,7 @@ def getInfo(key,pageNum):
     #通过关键字keywords进行搜索 返回json数据
     url = 'http://restapi.amap.com/v3/config/district?key=2cb3455eaee1a9d0032879ca752d13a3' \
           '&keywords=呼和浩特&subdistrict=3&extensions=base'
-    print 'url:',url
+    print('url:', url)
     r = requests.get(url, headers=headers).content
     j = json.loads(r.decode('utf8'))
     if j['count'] != 0:
@@ -45,7 +45,7 @@ def getInfo(key,pageNum):
         # 判断是否可递归
         if pageNum * 20 < float(j['count']):
             pageNum += 1
-            getInfo(key,pageNum)
+            getInfo(key, pageNum)
 if  __name__=='__main__':
     #通过改变关键字，就可以实现对关键字的相应查询
     getInfo(myKey, 1)

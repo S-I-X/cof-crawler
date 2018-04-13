@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import MySQLdb
+import pymysql
 
 headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0",
@@ -49,7 +49,7 @@ class ConnSettings:
                 self.db=DBname
 
         def getConn(self):
-                return MySQLdb.connect(host=self.host,db=self.db,port=self.port,
-                                    user=self.username,passwd=self.password,charset='utf8')
+                return pymysql.connect(host=self.host, db=self.db, port=self.port,
+                                       user=self.username, passwd=self.password, charset='utf8')
 
 

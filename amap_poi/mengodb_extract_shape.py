@@ -1,7 +1,7 @@
 import csv
 
-from amap_crawler_shape import aggregate_MongoDb
-from process import *
+from amap_poi.amap_crawler_shape import aggregate_MongoDb
+from amap_poi.process import *
 
 
 def extract_shape():

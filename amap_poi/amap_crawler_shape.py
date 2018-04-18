@@ -1,4 +1,4 @@
-from process import *
+from amap_poi.process import *
 
 
 def select_MongoDb(MongoCollection, queryArgs, projectionFields=None):
